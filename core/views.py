@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Curso
-from .forms import CursoForm
+from .models import Curso, Aluno, Professor
+from .forms import CursoForm, ProfessorForm, AlunoForm
 #cursos
 def listar_cursos(request):
     cursos = Curso.objects.all()
@@ -43,11 +43,11 @@ def remover_curso(request, id):
 
 #alunos
 def listar_alunos(request):
-    cursos = Aluno.objects.all()
+    aluno = Aluno.objects.all()
     contexto = {
-        'todos_alunos': cursos
+        'todos_alunos': aluno
     }
-    return render(request, 'alunos.html', contexto)
+    return render(request, 'usuario.html', contexto)
 
 def cadastrar_alunos(request):
     form = AlunoForm(request.POST or None)
@@ -57,9 +57,9 @@ def cadastrar_alunos(request):
         return redirect('listar_alunos')
 
     contexto = {
-        'form_alunos': form
+        'form_aluno': form
     }
-    return render(request, 'aluno_cadastrar.html', contexto)  
+    return render(request, 'usuario_cadastrar.html', contexto)  
 
 def editar_aluno(request, id):
     aluno = Aluno.objects.get(pk=id)
@@ -73,7 +73,7 @@ def editar_aluno(request, id):
         'form_aluno': form
     }
 
-    return render(request, 'aluno_cadastrar.html', contexto)  
+    return render(request, 'usuario_cadastrar.html', contexto)  
 
 def remover_aluno(request, id):
     aluno = Aluno.objects.get(pk=id)
@@ -87,14 +87,14 @@ def listar_professores(request):
     contexto = {
         'todos_professores': professores
     }
-    return render(request, 'professores.html', contexto)
+    return render(request, 'professor.html', contexto)
 
 def cadastrar_professor(request):
     form = ProfessorForm(request.POST or None)
 
     if form.is_valid():
         form.save()
-        return redirect('listar_professores')
+        return redirect('listar_professor')
 
     contexto = {
         'form_professor': form
@@ -107,7 +107,7 @@ def editar_professor(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('listar_professores')
+        return redirect('listar_professor')
 
     contexto = {
         'form_professor': form
@@ -118,4 +118,4 @@ def editar_professor(request, id):
 def remover_professor(request, id):
     professor = Professor.objects.get(pk=id)
     professor.delete()
-    return redirect('listar_professores')
+    return redirect('listar_professor')

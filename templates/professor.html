@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Professores</h1>
+    <p><a href="{% url 'cadastrar_professor' %}">Cadastrar</a></p>
+
+    <p>Listagem de Cursos</p>
+    {% for professor in todos_professores %}
+    <p>
+        Título: {{professor.titulo}} 
+        Vagas: {{professor.vagas}}
+        <a href="{% url 'editar_professor' professor.id%}">EDITAR</a>
+        <a href="{% url 'remover_professor' professor.id%}">REMOVER</a>
+    </p>
+    {% empty %}
+    <p> não existem cursos cadastrados</p>
+    {% endfor %}
+</body>
+</html>

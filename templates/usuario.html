@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Cursos</h1>
-    <p><a href="{% url 'cadastrar_usuario' %}">Cadastrar</a></p>
+    <h1>Usuarios</h1>
+    <p><a href="{% url 'cadastrar_aluno' %}">Cadastrar</a></p>
 
     <p>Listagem de Usuários</p>
     {% for usuario in todos_usuarios %}
     <p>
         Nome: {{usuario.nome}} 
         Idade: {{usuario.idade}}
-        <a href="{% url 'editar_usuario' curso.id %}">EDITAR</a>
-        <a href="{% url 'remover_usuario' curso.id%}">REMOVER</a>
+        <a href="{% url 'editar_usuario' aluno.id %}">EDITAR</a>
+        <a href="{% url 'remover_usuario' aluno.id%}">REMOVER</a>
     </p>
     {% empty %}
     <p> não existem usuarios cadastrados</p>

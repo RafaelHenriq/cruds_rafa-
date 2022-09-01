@@ -8,9 +8,11 @@ class Curso(models.Model):
 class Aluno(models.Model):
     nome = models.CharField('Nome', max_length=100)
     idade = models.IntegerField('Idade')
-    cpf = models.IntegerField('CPF')
+    cpf = models.IntegerField('CPF', max_length=11)
 
 class Professor(models.Model):
     nome = models.CharField('Nome', max_length=100)
     disciplina = models.CharField('Disciplina', max_length=50)
-    cpf = models.IntegerField('CPF')
+    cpf = models.IntegerField('CPF', max_length=11)
+
+  

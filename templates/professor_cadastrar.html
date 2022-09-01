@@ -14,22 +14,33 @@
     <title>Document</title>
 
     <style type="text/css">
-           
+     
+
         body{
-           margin: 0%;
            word-spacing: 10px;
            text-align: center;
            background-color:antiquewhite;
            font-size: center;
         }
+        div{
+           display: flex;
+           width: 500px;
+           height: 500px;
+           justify-content: center;
+           background-color: white;
+           align-items: center;
+          
+        }
         </style>
 </head>
 <body>
+    <div>
     <h1>Cadastrar Professor</h1>
     <form method="POST">
     {% csrf_token %}
        {{ form_professor }}
        <p><input type="submit" value="Cadastrar" /></p>
     </form>    
+</div>
 </body>
 </html>

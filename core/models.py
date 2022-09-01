@@ -14,3 +14,4 @@ class Professor(models.Model):
     nome = models.CharField('Nome', max_length=100)
     disciplina =models.IntegerField('Disciplina')
     cpf = models.IntegerField('CPF', max_length=11)
+

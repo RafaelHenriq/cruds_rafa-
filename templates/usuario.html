@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style type="text/css">
         
         
@@ -15,23 +16,45 @@
            background-color:antiquewhite;
            font-size: center;
         }
+        div::after{
+            text-align: center;
+        }
         </style>
 
 </head>
 <body>
+    <div >
     <h1>Usuarios</h1>
     <p><a href="{% url 'cadastrar_aluno' %}">Cadastrar</a></p>
 
     <p>Listagem de Usuários</p>
     {% for usuario in todos_alunos %}
-    <p>
-        Nome: {{usuario.nome}} 
-        Idade: {{usuario.idade}}
-        <a href="{% url 'editar_aluno' aluno.id %}">EDITAR</a>
-        <a href="{% url 'remover_aluno' aluno.id%}">REMOVER</a>
-    </p>
+    <table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Idade</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Acões</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.idade}}</td>
+      <td>{{usuario.cpf}}</td>
+      <td><a href="{% url 'editar_aluno' usuario.id %}">EDITAR</a>
+        <a href="{% url 'remover_aluno' usuario.id%}">REMOVER</a></td>
+    </tr>
+    
+  </tbody>
+</table>
+    
     {% empty %}
     <p> não existem usuarios cadastrados</p>
     {% endfor %}
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

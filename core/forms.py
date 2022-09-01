@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Curso,Aluno, Professor
+from .models import Curso, Aluno, Professor
 
 class CursoForm(ModelForm):
     class Meta:

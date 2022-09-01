@@ -12,5 +12,5 @@ class Aluno(models.Model):
 
 class Professor(models.Model):
     nome = models.CharField('Nome', max_length=100)
-    disciplina = models.IntegerField('Disciplina')
+    disciplina = models.CharField('Disciplina', max_length=50)
     cpf = models.IntegerField('CPF')

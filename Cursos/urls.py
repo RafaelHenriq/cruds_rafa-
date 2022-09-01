@@ -15,13 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_cursos, cadastrar_curso, editar_curso, remover_curso
+from core.views import listar_cursos, cadastrar_curso, editar_curso, remover_curso, home
 from core.views import listar_alunos, cadastrar_alunos, editar_aluno, remover_aluno
 from core.views import listar_professores, cadastrar_professor, editar_professor, remover_professor
-from core.views import pagina_inicial
 
 urlpatterns = [
-    path('pagina_inicial/', pagina_inicial, name='pagina_inicial'),
+    path('', home,name='home'),
     path('cursos/', listar_cursos, name='listar_cursos'),
     path('curso_cadastrar/', cadastrar_curso, name='cadastrar_curso'),
     path('curso_editar/<int:id>/', editar_curso, name='editar_curso'),

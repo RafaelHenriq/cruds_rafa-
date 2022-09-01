@@ -9,20 +9,25 @@
         
         
         body{
-           margin: 0%;
            word-spacing: 10px;
            text-align: center;
            background-color:antiquewhite;
            font-size: center;
+    
         }
+        div{
+            display: block;
+}
         </style>
 </head>
 <body>
+    <div>
     <h1>Cadastrar Usuario</h1>
     <form method="POST">
     {% csrf_token %}
        {{ form_aluno }}
        <p><input type="submit" value="Cadastrar" /></p>
     </form>    
+</div>
 </body>
 </html>

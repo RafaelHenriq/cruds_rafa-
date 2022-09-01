@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Curso, Aluno, Professor
 from .forms import CursoForm, ProfessorForm, AlunoForm
+
+def home(request):
+    return render(request, 'index.html')
 #cursos
 def listar_cursos(request):
     cursos = Curso.objects.all()

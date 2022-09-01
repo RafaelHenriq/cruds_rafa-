@@ -4,14 +4,14 @@ from .models import Curso,Aluno, Professor
 class CursoForm(ModelForm):
     class Meta:
         model = Curso
-        fields = ['titulo', 'vagas']
+        fields = ['titulo', 'vagas', 'turno']
 
 class AlunoForm(ModelForm):
     class Meta:
         model = Aluno
-        fields = ['nome', 'idade']
+        fields = ['nome', 'idade', 'cpf']
 
 class ProfessorForm(ModelForm):
     class Meta:
         model = Professor
-        fields = ['nome', 'disciplina']
+        fields = ['nome', 'disciplina', 'cpf']

@@ -22,14 +22,21 @@
            background-color:antiquewhite;
            font-size: center;
         }
+        div{
+           width: 500px; 
+           width: 500px;
+           background-color: white;
+        }
         </style>
 </head>
 <body>
+    <div>
     <h1>Cadastrar Professor</h1>
     <form method="POST">
     {% csrf_token %}
        {{ form_professor }}
        <p><input type="submit" value="Cadastrar" /></p>
     </form>    
+</div>
 </body>
 </html>

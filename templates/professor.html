@@ -16,10 +16,17 @@
            background-color:antiquewhite;
            font-size: center;
         }
+        div{
+           width: 300px; 
+           width: 300px;
+           color: white;
+        }
         </style>
 
 </head>
 <body>
+
+    <div>
     <h1>Professores</h1>
     <p><a href="{% url 'cadastrar_professor' %}">Cadastrar</a></p>
 
@@ -34,5 +41,6 @@
     {% empty %}
     <p> não existem cursos cadastrados</p>
     {% endfor %}
+</div>
 </body>
 </html>

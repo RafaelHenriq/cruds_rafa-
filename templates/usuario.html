@@ -11,12 +11,12 @@
     <p><a href="{% url 'cadastrar_aluno' %}">Cadastrar</a></p>
 
     <p>Listagem de Usuários</p>
-    {% for usuario in todos_usuarios %}
+    {% for usuario in todos_alunos %}
     <p>
         Nome: {{usuario.nome}} 
         Idade: {{usuario.idade}}
-        <a href="{% url 'editar_usuario' aluno.id %}">EDITAR</a>
-        <a href="{% url 'remover_usuario' aluno.id%}">REMOVER</a>
+        <a href="{% url 'editar_aluno' aluno.id %}">EDITAR</a>
+        <a href="{% url 'remover_aluno' aluno.id%}">REMOVER</a>
     </p>
     {% empty %}
     <p> não existem usuarios cadastrados</p>

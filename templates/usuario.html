@@ -16,22 +16,26 @@
            background-color:antiquewhite;
            font-size: center;
         }
+        div::after{
+            text-align: center;
+        }
         </style>
 
 </head>
 <body>
+    <div >
     <h1>Usuarios</h1>
     <p><a href="{% url 'cadastrar_aluno' %}">Cadastrar</a></p>
 
     <p>Listagem de Usuários</p>
     {% for usuario in todos_alunos %}
-    <table class="table">
+    <table class="table" >
   <thead>
     <tr>
       <th scope="col">Nome</th>
-      <th scope="col">idade</th>
-      <th scope="col">cpf</th>
-      <th scope="col">Acoes</th>
+      <th scope="col">Idade</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Acões</th>
     </tr>
   </thead>
   <tbody>
@@ -50,7 +54,7 @@
     {% empty %}
     <p> não existem usuarios cadastrados</p>
     {% endfor %}
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

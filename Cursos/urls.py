@@ -18,6 +18,9 @@ from django.urls import path
 from core.views import listar_cursos, cadastrar_curso, editar_curso, remover_curso, home
 from core.views import listar_alunos, cadastrar_alunos, editar_aluno, remover_aluno
 from core.views import listar_professores, cadastrar_professor, editar_professor, remover_professor
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', home,name='home'),
@@ -39,4 +42,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
 
-]
+] + static(settimgs.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

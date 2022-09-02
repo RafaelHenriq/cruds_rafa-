@@ -25,7 +25,7 @@
     <h1>Cadastrar Usuario</h1>
     <form method="POST">
     {% csrf_token %}
-       {{ form_aluno }}
+       {{ form_aluno.as_p }}
        <p><input type="submit" value="Cadastrar" /></p>
     </form>    
 </div>

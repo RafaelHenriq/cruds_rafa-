@@ -27,8 +27,9 @@
     <p>Listagem de Cursos</p>
     {% for professor in todos_professores %}
     <table class="table">
-        <thead>
+        <thead>  
           <tr>
+            <th scope="col">Foto</th>
             <th scope="col">Nome</th>
             <th scope="col">Disciplina</th>
             <th scope="col">CPF</th>
@@ -37,6 +38,8 @@
         </thead>
         <tbody>
           <tr>
+            <td><img src="/media/{{professor.foto}}" alt="" width="100px"
+height="100px"/> </td>
             <td>{{professor.nome}} </td>
             <td>{{professor.disciplina}}</td>
             <td>{{professor.cpf}}</td>
@@ -44,7 +47,7 @@
                 <a href="{% url 'remover_professor' professor.id%}">REMOVER</a></td>
           </tr>
         </tbody>
-      </table>
+    </table>
     {% empty %}
     <p> não existem cursos cadastrados</p>
     {% endfor %}

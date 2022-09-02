@@ -9,9 +9,9 @@ class CursoForm(ModelForm):
 class AlunoForm(ModelForm):
     class Meta:
         model = Aluno
-        fields = ['nome', 'idade', 'cpf']
+        fields = ['nome', 'idade', 'cpf', 'foto']
 
 class ProfessorForm(ModelForm):
     class Meta:
         model = Professor
-        fields = ['nome', 'disciplina', 'cpf']
+        fields = ['nome', 'disciplina', 'cpf', 'foto']

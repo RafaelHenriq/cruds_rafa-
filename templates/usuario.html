@@ -29,6 +29,7 @@
     <table class="table" >
   <thead>
     <tr>
+      <th scope="col">Foto</th>
       <th scope="col">Nome</th>
       <th scope="col">Idade</th>
       <th scope="col">CPF</th>
@@ -37,7 +38,8 @@
   </thead>
   <tbody>
     <tr>
-      
+      <td><img src="/media/{{usuario.foto}}" alt="" width="100px"
+        height="100px"/> </td>
       <td>{{usuario.nome}}</td>
       <td>{{usuario.idade}}</td>
       <td>{{usuario.cpf}}</td>

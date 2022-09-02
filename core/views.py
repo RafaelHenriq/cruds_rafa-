@@ -53,7 +53,7 @@ def listar_alunos(request):
     return render(request, 'usuario.html', contexto)
 
 def cadastrar_alunos(request):
-    form = AlunoForm(request.POST or None)
+    form = AlunoForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.save()
@@ -93,7 +93,7 @@ def listar_professores(request):
     return render(request, 'professor.html', contexto)
 
 def cadastrar_professor(request):
-    form = ProfessorForm(request.POST or None)
+    form = ProfessorForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.save()

@@ -23,7 +23,7 @@
 <body>
     <div>
     <h1>Cadastrar Usuario</h1>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
        {{ form_aluno.as_p }}
        <p><input type="submit" value="Cadastrar" /></p>
